@@ -38,13 +38,13 @@ function Paste() {
                   <div className="flex flex-row gap-2 place-content-evenly">
                     <button className="hover:cursor-pointer">
                       <a href={`/?pasteId=${paste?._id}`}>
-                        <i class="ri-pencil-fill"></i>
+                        <i className="ri-pencil-fill"></i>
                       </a>
                     </button>
 
                     <button className="hover:cursor-pointer">
                       <a href={`/pastes/${paste?._id}`}>
-                        <i class="ri-eye-fill"></i>
+                        <i className="ri-eye-fill"></i>
                       </a>
                     </button>
 
@@ -52,7 +52,7 @@ function Paste() {
                       onClick={() => handleDelete(paste?._id)}
                       className="hover:cursor-pointer"
                     >
-                      <i class="ri-delete-bin-line"></i>
+                      <i className="ri-delete-bin-line"></i>
                     </button>
 
                     <button
@@ -62,7 +62,7 @@ function Paste() {
                         toast.success("copied to clipboard");
                       }}
                     >
-                      <i class="ri-file-copy-line"></i>
+                      <i className="ri-file-copy-line"></i>
                     </button>
 
                     <button
@@ -95,12 +95,12 @@ function Paste() {
 
                 <div className="text-gray-200">{paste.content}</div>
 
-                <div className=" text-sm text-gray-300 mt-1 text-end">
-                  {new Date(paste.createdAt).toLocaleDateString("en-GB", {
+                {paste.createdAt && new Date(paste.createdAt).toLocaleDateString("en-GB", {
                     day: "2-digit",
                     month: "long",
                     year: "numeric",
                   })}
+
                 </div>
               </div>
             );
